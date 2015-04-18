@@ -1,6 +1,6 @@
 #!/bin/bash
 : ${postconf_myhostname:='localhost'}
-: ${postconf_mydestination:='localhost, localhost.localdomain, localhost.\\$mydomain, \\$myhostname, \\$myhostname.localdomain, \\$myhostname.mydomain, localdomain, \\$mydomain'}
+: ${postconf_mydestination:='localhost, localhost.localdomain, localhost.\\$mydomain, \\$myhostname, \\$myhostname.localdomain, \\$myhostname.\\$mydomain, localdomain, \\$mydomain'}
 : ${postconf_mynetworks:="$(postconf -h mynetworks) $(ip route show | perl -l40 -ne 'print $1 if /^((?:\d{1,3}\.){3}\d{1,3}\/\d{1,2}).*?\sscope\s+link\s/')"}
 : ${postconf_smtpd_banner:='\\$myhostname ESMTP'}
 : ${postconf_smtpd_helo_required:='yes'}
