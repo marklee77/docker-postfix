@@ -5,3 +5,5 @@ export postconf_mynetworks
 env | grep ^postconf_ | while IFS="=" read key value; do
     postconf -e ${key#postconf_}="$value"
 done
+
+service postfix start
