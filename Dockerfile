@@ -10,7 +10,8 @@ RUN apt-get update && \
         postfix-ldap \
         postfix-mysql \
         postfix-pcre \
-        postfix-pgsql && \
+        postfix-pgsql \
+        postfix-policyd-spf-python && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 ADD postfix.sh /root/
