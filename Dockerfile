@@ -6,5 +6,11 @@ RUN apt-get update && \
     apt-get -y install \
         mailutils \
         postfix \
-        postfix-policyd-spf-python && \
+        postfix-cdb \
+        postfix-ldap \
+        postfix-mysql \
+        postfix-pcre \
+        postfix-pgsql && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+
+ADD postfix.sh /root/
