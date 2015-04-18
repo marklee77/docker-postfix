@@ -17,6 +17,7 @@ RUN apt-get update && \
 #ADD master.cf /etc/postfix/master.cf
 
 ADD postfix.sh /etc/my_init.d/10-postfix
+RUN chmod 755 /etc/my_init.d/10-postfix
 
 # data volumes
 VOLUME [ "/etc/postfix", "/var/log", "/var/spool/mail" ]
