@@ -18,12 +18,6 @@ RUN apt-get update && \
 
 ADD postfix.sh /etc/my_init.d/10-postfix
 
-RUN mkdir -p /var/spool/postfix/etc/ssl/certs
-
-hosts localtime nsswitch.conf resolv.conf services
-     
-chmod 755 /etc/my_init.d/10-postfix
-
 # data volumes
 VOLUME [ "/etc/postfix", "/var/log", "/var/spool/mail" ]
 
