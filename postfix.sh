@@ -27,4 +27,4 @@ env | grep ^postconf_ | while IFS="=" read key value; do
     postconf -e ${key#postconf_}="$(eval "echo $value")"
 done
 
-postfix start
+/etc/init.d/postfix start
