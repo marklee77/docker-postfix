@@ -15,3 +15,9 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 ADD postfix.sh /root/
+
+# data volumes
+VOLUME [ "/etc/postfix", "/var/log", "/var/spool/mail" ]
+
+# interface ports
+EXPOSE 25 587
