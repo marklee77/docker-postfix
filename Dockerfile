@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM phusion/baseimage:latest
 MAINTAINER Mark Stillwell <mark@stillwell.me>
 
 ENV DEBIAN_FRONTEND noninteractive
