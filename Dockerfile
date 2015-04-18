@@ -14,6 +14,8 @@ RUN apt-get update && \
         postfix-policyd-spf-python && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
+ADD master.cf /etc/postfix/master.cf
+
 ADD postfix.sh /root/
 
 # data volumes
