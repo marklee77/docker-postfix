@@ -20,7 +20,7 @@ ADD postfix.sh /etc/my_init.d/10-postfix
 RUN chmod 755 /etc/my_init.d/10-postfix
 
 # data volumes
-VOLUME [ "/etc/postfix", "/var/log", "/var/spool/mail" ]
+VOLUME [ "/etc/postfix", "/var/log", "/var/mail" ]
 
 # interface ports
 EXPOSE 25 587

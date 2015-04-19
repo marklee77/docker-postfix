@@ -10,7 +10,26 @@
 : ${postconf_postscreen_greet_action:='enforce'}
 : ${postconf_postscreen_dnsbl_action:='enforce'}
 : ${postconf_postscreen_dnsbl_sites:='zen.spamhaus.org, psbl.surriel.com, dnsbl.sorbs.net'}
-: ${postconf_smtpd_recipient_restrictions:='permit_mynetworks, reject_unauth_pipelining, reject_unknown_client_hostname, reject_invalid_helo_hostname, reject_non_fqdn_helo_hostname, reject_non_fqdn_sender, reject_unknown_sender_domain, reject_non_fqdn_recipient, reject_unknown_recipient_domain, reject_unlisted_recipient, reject_unauth_destination, reject_rbl_client zen.spamhous.org, reject_rbl_client psbl_surriel.com, reject_rbl_client dnsbl.sorbs.net, reject_rhsbl_client rhsbl.sorbs.net, reject_rhsbl_sender rhsbl.sorbs.net, check_policy_service unix:private/policy-spf, permit'}
+: ${postconf_smtpd_recipient_restrictions:='
+    permit_mynetworks, 
+    reject_unauth_pipelining, 
+    reject_unknown_client_hostname, 
+    reject_invalid_helo_hostname, 
+    reject_non_fqdn_helo_hostname, 
+    reject_non_fqdn_sender, 
+    reject_unknown_sender_domain, 
+    reject_non_fqdn_recipient, 
+    reject_unknown_recipient_domain, 
+    reject_unlisted_recipient, 
+    reject_unauth_destination, 
+    reject_rbl_client zen.spamhous.org, 
+    reject_rbl_client psbl_surriel.com, 
+    reject_rbl_client dnsbl.sorbs.net, 
+    reject_rhsbl_client rhsbl.sorbs.net, 
+    reject_rhsbl_sender rhsbl.sorbs.net, 
+    check_policy_service unix:private/policy-spf, 
+    permit'}
+: ${postconf_policy-spf_time_limit:='3600s'}
 
 export postconf_myhostname postconf_mynetworks postconf_smtpd_banner postconf_smtpd_helo_required postconf_disable_vrfy_command postconf_strict_rfc821_envelopes postconf_postscreen_greet_action postconf_postscreen_dnsbl_action postconf_postscreen_dnsbl_sites postconf_smtpd_recipient_restrictions
 
