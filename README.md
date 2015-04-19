@@ -9,3 +9,5 @@ step 1 is to make it easy to send mail
 step 2 is to add imap
 
 step 3 is to think about scalability...
+
+how to set milters for submission?
