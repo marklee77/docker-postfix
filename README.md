@@ -11,3 +11,10 @@ step 2 is to add imap
 step 3 is to think about scalability...
 
 how to set milters for submission?
+
+milters (in this order):
+    opendmarc
+    phwhois
+    clamav
+    spamassassin
+    dspam
