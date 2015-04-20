@@ -14,6 +14,7 @@ how to set milters for submission?
 
 milters (in this order):
     opendmarc
+    greylist (postgrey or postfix-gld)
     phwhois
     clamav
     spamassassin
