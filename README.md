@@ -18,3 +18,4 @@ milters (in this order):
     clamav
     spamassassin
     dspam
+    cluebringer?
