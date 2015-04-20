@@ -64,8 +64,8 @@ export postconf_postscreen_dnsbl_sites
     permit"}
 export postconf_smtpd_recipient_restrictions
 
-: ${postconf_policy-spf_time_limit:='3600s'}
-export postconf_policy-spf_time_limit
+: ${postconf_policyMINUSspf_time_limit:='3600s'}
+export postconf_policyMINUSspf_time_limit
 
 # need to add container hostname to get local delivery
 export postconf_mydestination="$postconf_mydestination, $HOSTNAME"
@@ -80,7 +80,10 @@ export postconf_mydestination="$postconf_mydestination, $HOSTNAME"
 export postconf_smtpd_tls_eecdh_grade postconf_smtpd_tls_mandatory_ciphers postconf_smtpd_tls_mandatory_protocols postconf_tls_high_cipherlist postconf_tls_ssl_options 
 
 env | grep ^postconf_ | while IFS="=" read key value; do
-    postconf -e ${key#postconf_}="$(eval "echo $value")"
+    key=${key#postconf_}
+    key=${key//MINUS/-}
+    key=${key//SLASH//}
+    postconf -e $key="$(eval "echo $value")"
 done
 
 /etc/init.d/postfix start
